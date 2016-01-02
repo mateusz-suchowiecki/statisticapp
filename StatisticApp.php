@@ -21,7 +21,7 @@ class StatisticApp
     public function send(StatisticMessage $message)
     {
         
-        $fp = stream_socket_client("udp://" . StatisticApp::$serverIp, $errno, $errstr);
+        $fp = stream_socket_client("udp://" . $this->serverIp, $errno, $errstr);
         if ($fp) {
             fwrite($fp, $message->prepare($this->appId));
             fclose($fp);
