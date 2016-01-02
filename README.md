@@ -4,13 +4,13 @@ Put below code befor ```</body>``` tag
 <script>
     (function(i){var d=document;var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='http://inz.tums.pl/js/statisticapp.js';var w=window; w.statisticApp=i;var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);
     })({
-        app_id: "your app id",
+        appId: "your app id",
         userKey: "unique user key", // Uniq user identificator (email or id)
     });
 </script>
 ```
 
-# Php instalation
+# PHP instalation
 Instal script via composer
 ```dcl
 composer require emsoft/statisticapp dev-master
