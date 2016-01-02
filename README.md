@@ -1,6 +1,6 @@
 # Javascript instalation
 Put below code befor ```</body>``` tag
-```
+```js
 <script>
     (function(i){var d=document;var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='http://inz.tums.pl/js/statisticapp.js';var w=window; w.statisticApp=i;var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);
     })({
@@ -12,18 +12,18 @@ Put below code befor ```</body>``` tag
 
 # Php instalation
 Instal script via composer
-```
+```dcl
 composer require emsoft/statisticapp dev-master
 ```
 Create instance of StatisticApp
-```
+```php
 use Emsoft\StatisticAppBundle\StatisticApp;
 // ...
 $statisticApp = new StatisticApp('your app id');
 ```
 
 Before each request run below code
-```
+```php
 use Emsoft\StatisticAppBundle\StatisticMessage;
 // ...
 $message = new StatisticMessage("unique user key"); // Uniq user identificator (email or id)
@@ -33,18 +33,18 @@ $statisticApp->send($message);
 # Symfony instalation
 
 Instal script via composer
-```
+```dcl
 composer require emsoft/statisticapp dev-master
 ```
 Put app id into config parameters
-```
+```yml
 parameters:
     locale: pl
     statisticAppId: asd
 ```
 
 Create statistic event listener
-```
+```php
 <?php
 namespace AppBundle\EventListener;
 
