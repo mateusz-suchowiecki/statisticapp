@@ -91,7 +91,7 @@ class StatisticListener
 ```
 
 Add event listener to service config
-```
+```yml
 app.statistic.action_listener:
     class: AppBundle\EventListener\StatisticListener
     arguments: [ @service_container ]
