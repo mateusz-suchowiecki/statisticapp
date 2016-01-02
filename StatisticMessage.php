@@ -59,7 +59,7 @@ class StatisticMessage
             'appId' => $appId,
             'userKey' => $this->userKey,
             'sessionId' => $this->sessionId,
-            'slub' => $this->slug,
+            'slug' => $this->slug,
         ]);
     }
     

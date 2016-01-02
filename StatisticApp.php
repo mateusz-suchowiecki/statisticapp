@@ -26,9 +26,6 @@ class StatisticApp
             fwrite($fp, $message->prepare($this->appId));
             fclose($fp);
         }
-        else {
-            throw new Exception($errstr);
-        }
     }
     
     
