@@ -2,36 +2,66 @@
 
 namespace Emsoft\StatisticAppBundle;
 
+
 class StatisticMessage 
 {
 
-    private $appId;
-    private $message;
-
-    public function __construct($appId)
-    {
-        $this->appId = $appId;
-    }
+    private $userKey;
+    private $sessionId;
+    private $slug;
     
-    public function prepare($userKey)
+    public function __construct($userKey)
     {
-        $message = [
-            'appId' => $this->appId, 
-            'userKey' => $userKey,
-            'sessionId' => session_id(),
-            'slug' => $_SERVER["REQUEST_URI"]
-        ];
+        $this->sessionId = session_id();
+        $this->userKey = $userKey;
+        $this->slug = $_SERVER["REQUEST_URI"];
         
-        $this->message = json_encode($message);
         return $this;
     }
     
-    public function send() 
+
+    public function getUserKey()
     {
-        $fp = stream_socket_client("udp://178.62.230.79:9999", $errno, $errstr);
-        if ($fp) {
-            fwrite($fp, $this->message);
-            fclose($fp);
-        }
+        return $this->userKey;
     }
+
+    public function getSessionId()
+    {
+        return $this->sessionId;
+    }
+
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+
+    public function setUserKey($userKey)
+    {
+        $this->userKey = $userKey;
+        return $this;
+    }
+
+    public function setSessionId($sessionId)
+    {
+        $this->sessionId = $sessionId;
+        return $this;
+    }
+
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+        return $this;
+    }
+
+    public function prepare($appId) 
+    {
+        return json_encode([
+            'appId' => $appId,
+            'userKey' => $this->userKey,
+            'sessionId' => $this->sessionId,
+            'slub' => $this->slug,
+        ]);
+    }
+    
+    
 }
