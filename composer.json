@@ -1,0 +1,30 @@
+{
+    "name" : "emsoft/statisticapp",
+    "description" : "Statistic App Bundle",
+    "type" : "symfony-bundle",
+    "authors" : [{
+        "name" : "Mateusz Suchowiecki",
+        "email" : "mateusz.suchowiecki@gmail.com"
+    }],
+    "keywords" : [
+        "statistic app"
+    ],
+    "license" : [
+        "MIT"
+    ],
+    "require" : {
+    },
+    "autoload" : {
+        "psr-0" : {
+            "Emsoft\\StatisticAppBundle" : ""
+        }
+    },
+    "target-dir" : "Emsoft/StatisticAppBundle",
+    "repositories" : [{
+    }],
+    "extra" : {
+    "branch-alias" : {
+            "dev-master" : "1.0"
+        }
+    }
+}
